@@ -1,0 +1,14 @@
+[Unit]
+Description=Redis In-Memory Data Store
+After=network.target
+
+[Service]
+Type=forking
+User=redis
+Group=redis
+ExecStart=/starlab/server/redis/bin/redis-server /starlab/server/redis-conf/redis.conf
+ExecStop=/starlab/server/redis/bin/redis-cli shutdown
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
