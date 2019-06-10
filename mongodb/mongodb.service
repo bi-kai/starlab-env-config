@@ -1,0 +1,14 @@
+[Unit]
+Description=mongodb
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=forking
+ExecStart=/starlab/server/mongodb/bin/mongod --config /starlab/server/database/mongodb/mongodb.yml
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+# ExecStop=/home/mongodb/bin/mongod --shutdown --config /home/mongodb/bin/mongodb.conf
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
