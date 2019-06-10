@@ -15,12 +15,12 @@ processManagement:
 net:
   bindIp: 0.0.0.0 #127.0.0.1
   port: 37017
-  #maxIncomingConnections: 52428
-  wireObjectCheck : false
+  #maxIncomingConnections: 65536
+  wireObjectCheck: false
   unixDomainSocket: 
-    enabled : true
+    enabled: true
 security:
-  authorization: disabled  #disabled #enabled
+  authorization: disabled #enabled
 
 
 
